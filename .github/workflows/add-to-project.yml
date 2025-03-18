@@ -17,7 +17,7 @@ jobs:
       - name: Add issue to project
         uses: ./
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.PROJECT_TOKEN }}
           project-id: ${{ secrets.PROJECT_ID }}
           column-name: "To Do"
           custom-field-mappings: |
