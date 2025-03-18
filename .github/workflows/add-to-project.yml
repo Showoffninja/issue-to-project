@@ -1,0 +1,27 @@
+name: Add Issue to Project
+
+on:
+  issues:
+    types: [opened, reopened]
+
+jobs:
+  add-to-project:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Add issue to project
+        uses: ./
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          project-id: ${{ secrets.PROJECT_ID }}
+          column-name: "To Do"
+          custom-field-mappings: |
+            {
+              "Priority": "field:priority",
+              "Size": "field:estimated size",
+              "Due Date": "field:due date",
+              "Team": "field:team",
+              "Area": "field:affected area",
+              "Type": "label-contains:bug"
+            }

@@ -1,0 +1,65 @@
+name: Feature Request
+description: Suggest a new feature for this project
+title: "[Feature]: "
+labels: ["enhancement"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a new feature!
+        
+  - type: input
+    id: description
+    attributes:
+      label: Feature Description
+      description: Clearly describe the feature you'd like to see implemented
+      placeholder: As a user, I want to...
+    validations:
+      required: true
+      
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - Low
+        - Medium
+        - High
+    validations:
+      required: true
+      
+  - type: dropdown
+    id: estimated_size
+    attributes:
+      label: Estimated Size
+      description: How big is this feature?
+      options:
+        - Small
+        - Medium
+        - Large
+        - XL
+    validations:
+      required: true
+      
+  - type: input
+    id: due_date
+    attributes:
+      label: Due Date
+      description: When should this feature be delivered?
+      placeholder: YYYY-MM-DD
+    validations:
+      required: false
+      
+  - type: dropdown
+    id: team
+    attributes:
+      label: Team
+      options:
+        - Frontend
+        - Backend
+        - DevOps
+        - QA
+    validations:
+      required: false
