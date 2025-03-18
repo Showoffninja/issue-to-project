@@ -14,7 +14,7 @@ jobs:
         with:
           # You can target a project in a different organization
           # to the issue
-          project-url: https://github.com/orgs/showoffninja/projects/4
+          project-url: https://github.com/orgs/Showoffninja/projects/4
           github-token: ${{ secrets.PROJECT_TOKEN }}
           labeled: bug, feature
           label-operator: OR
