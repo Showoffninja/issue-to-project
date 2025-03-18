@@ -1,0 +1,36 @@
+name: 'issue-to-project'
+description: 'convert issues into project cards'
+author: 'showoffninja'
+
+inputs:
+  github-token:
+    description: 'GitHub token with appropriate permissions'
+    required: true
+  project-id:
+    description: 'The node ID of the project to add issues to'
+    required: true
+  column-name:
+    description: 'The name of the column to place the issue in (e.g., "To Do", "In Progress")'
+    required: false
+  status-field-name:
+    description: 'The name of the status/column field (defaults to "Status")'
+    required: false
+    default: 'Status'
+  custom-field-mappings:
+    description: 'JSON object mapping project field names to issue data extraction rules'
+    required: false
+    default: '{}'
+  issue-number:
+    description: 'The issue number to add to the project (defaults to current issue)'
+    required: false
+  repository:
+    description: 'The repository containing the issue in owner/repo format (defaults to current repository)'
+    required: false
+
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
+
+branding:
+  icon: 'clipboard'
+  color: 'blue'
