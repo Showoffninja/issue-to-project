@@ -24,7 +24,7 @@ jobs:
         with:
           github-token: ${{ secrets.PROJECT_TOKEN }}
           project-id: ${{ secrets.PROJECT_ID }}
-          column-name: "To Do"
+          column-name: "Todo"
           custom-field-mappings: |
             {
               "Priority": "field:priority",
