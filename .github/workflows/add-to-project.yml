@@ -8,13 +8,13 @@ jobs:
   add-to-project:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/add-to-project@v0.5.0
-        with:
-          # You can use GITHUB_TOKEN for adding to projects in the same repo
-          github-token: ${{ secrets.PROJECT_TOKEN }}
-          project-url: https://github.com/users/Showoffninja/projects/4
-          # Or use the node ID directly
-          # project-url: ${{ secrets.PROJECT_ID }}
+      #- uses: actions/add-to-project@v0.5.0
+      #  with:
+      #    # You can use GITHUB_TOKEN for adding to projects in the same repo
+      #    github-token: ${{ secrets.PROJECT_TOKEN }}
+      #    project-url: https://github.com/users/Showoffninja/projects/4
+      #    # Or use the node ID directly
+      #    # project-url: ${{ secrets.PROJECT_ID }}
       
       # Then use your custom action for field population
       - name: Checkout repository
@@ -22,7 +22,7 @@ jobs:
       - name: Populate project fields
         uses: ./
         with:
-          github-token: ${{ secrets.PROJECT_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           project-id: ${{ secrets.PROJECT_ID }}
           column-name: "Todo"
           custom-field-mappings: |
